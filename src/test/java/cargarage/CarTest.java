@@ -13,6 +13,19 @@ public class CarTest {
 	}
 	
 	@Test
+	public void shouldConsumeFuel() {
+		// Tests accelerate()
+		// Arrange
+		// Act
+		// Assert
+	}
+	
+	@Test
+	public void shouldRefuel() {
+		// Tests addFuel()
+	}
+	
+	@Test
 	public void shouldSlowDown() {
 		// Tests the brake() method in Car
 		// Arrange
@@ -21,5 +34,13 @@ public class CarTest {
 	}
 	
 	@Test
-	public void should
+	public void shouldStart() {
+		// Tests toggleEngine()
+	}
+	
+	@Test
+	public void shouldTurnOff() {
+		// Tests toggleEngine()
+	}
+	
 }
