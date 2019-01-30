@@ -16,6 +16,7 @@ public class Application {
 			System.out.println("2. Remove a Car from the Garage");
 			System.out.println("3. List all Cars");
 			System.out.println("4. Test drive a car");
+			System.out.println("5. Refuel all cars");
 
 			String userSelection = input.nextLine();
 			switch (userSelection) {
@@ -101,12 +102,19 @@ public class Application {
 					}
 				}
 				break;
+			case "5":
+				garage.fuellAllCars();
+				printAllCars(garage);
+				System.out.println("You have refueled all cars");
+				break;
 			}
 		}
 	}
 
 	/**
 	 * Refactored out for abstractions sake
+	 * 
+	 * prints vins and current fuel level of all cars
 	 * 
 	 */
 	private static void printAllCars(Garage garage) {

@@ -49,7 +49,7 @@ public class Car {
 	
 	@Override
 	public String toString() {
-		return "Car vin: " + vin;
+		return "Car vin: " + vin + ", current fuel: " + fuel + "\n";
 	}
 
 }
