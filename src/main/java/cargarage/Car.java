@@ -46,5 +46,10 @@ public class Car {
 	public boolean isOn() {
 		return on;
 	}
+	
+	@Override
+	public String toString() {
+		return "Car vin: " + vin;
+	}
 
 }

@@ -1,5 +1,6 @@
 package cargarage;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +32,10 @@ public class Garage {
 
 	public Car getCar(String string) {
 		return cars.get(string);
+	}
+
+	public Collection<Car> getCars() {
+		return cars.values();
 	}
 
 }

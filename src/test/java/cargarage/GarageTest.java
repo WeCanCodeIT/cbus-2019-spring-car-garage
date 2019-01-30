@@ -2,6 +2,7 @@ package cargarage;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.Collection;
 import java.util.HashMap;
 
 import org.junit.Assert;
@@ -81,11 +82,25 @@ public class GarageTest {
 		// **APPLICATION** should then let you choose what to do with that car
 	}
 	
+	/**
+	 * Changes to code:
+	 * 
+	 * 1. Drives out creation of getCars()
+	 * 2. Causes toString() to be over-ridden in Car
+	 */
 	@Test
-	public void _createTestName_() {
+	public void shouldGetAllCars() {
 		// Should be able to list stats of all cars
 		// create necessary method(s)
 		// GARAGE should provide cars
 		// APPLICATION should list all stats
+		Garage garage = new Garage(new HashMap<>());
+		
+		// add a couple cars
+		garage.addCar(new Car("1", 0, 100));
+		garage.addCar(new Car("2", 0, 100));
+		garage.addCar(new Car("3", 0, 100));
+		
+		assertEquals(garage.getCars() instanceof Collection<?>, true);
 	}
 }
