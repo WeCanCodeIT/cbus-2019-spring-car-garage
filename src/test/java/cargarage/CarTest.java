@@ -77,12 +77,27 @@ public class CarTest {
 		
 	}
 	
+	/**
+	 * Changes to code:
+	 * 
+	 * 1. Test Drive brake() method
+	 */
 	@Test
 	public void shouldSlowDown() {
 		// Tests the brake() method in Car
 		// Arrange
+		Car car = new Car(0, 100);
+		
 		// Act
+		int accelerateSpeed = 50;
+		int brakeSpeed = 20;
+		
+		car.accelerate(accelerateSpeed); // get car moving
+		car.brake(brakeSpeed); // slow car down
+		int speedAfterBraking = car.getSpeed(); 
+		
 		// Assert
+		assertEquals(accelerateSpeed - brakeSpeed, speedAfterBraking);
 	}
 	
 	@Test
