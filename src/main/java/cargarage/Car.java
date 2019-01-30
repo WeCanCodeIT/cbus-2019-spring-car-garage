@@ -4,10 +4,12 @@ public class Car {
 	
 	private int speed;
 	private int fuel;
+	private boolean on;
 
 	public Car(int speed, int fuel) {
 		this.speed = speed;
 		this.fuel = fuel;
+		this.on = false;
 	}
 
 	public int getSpeed() {
@@ -29,6 +31,14 @@ public class Car {
 
 	public void brake(int brakeSpeed) {
 		this.speed -= brakeSpeed;
+	}
+
+	public void toggleOn() {
+		this.on = !this.on;
+	}
+
+	public boolean isOn() {
+		return on;
 	}
 
 }

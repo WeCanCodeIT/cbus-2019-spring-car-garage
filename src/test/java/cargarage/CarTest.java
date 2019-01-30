@@ -100,14 +100,42 @@ public class CarTest {
 		assertEquals(accelerateSpeed - brakeSpeed, speedAfterBraking);
 	}
 	
+	/**
+	 * Changes to code:
+	 * 
+	 * 1. Test Drive creation of the isOn() method
+	 * 2. Test Drive creation of toggleOn() method
+	 *  
+	 */
 	@Test
 	public void shouldStart() {
-		// Tests toggleEngine()
+		// Tests toggleOn()
+		Car car = new Car(0,100);
+		
+		car.toggleOn();
+		boolean carIsOn = car.isOn();
+		
+		assertEquals(true, carIsOn);
 	}
 	
+	/**
+	 * Changes to code:
+	 * 
+	 * 1. Build logic into toggleOn() method
+	 * 2. Create on property
+	 * 3. Finish building isOn() method
+	 *  
+	 */
 	@Test
 	public void shouldTurnOff() {
-		// Tests toggleEngine()
+		// Tests toggleOn()
+		Car car = new Car(0,100);
+		
+		car.toggleOn(); // turns car on
+		car.toggleOn(); // turns car off
+		boolean carIsOn = car.isOn();
+		
+		assertEquals(false, carIsOn);
 	}
 	
 }
