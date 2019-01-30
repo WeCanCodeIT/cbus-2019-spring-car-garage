@@ -2,14 +2,20 @@ package cargarage;
 
 public class Car {
 	
+	private String vin;
 	private int speed;
 	private int fuel;
 	private boolean on;
 
-	public Car(int speed, int fuel) {
+	public Car(String vin, int speed, int fuel) {
+		this.vin = vin;
 		this.speed = speed;
 		this.fuel = fuel;
 		this.on = false;
+	}
+
+	public String getVin() {
+		return vin;
 	}
 
 	public int getSpeed() {

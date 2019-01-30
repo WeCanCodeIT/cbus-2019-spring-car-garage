@@ -24,7 +24,7 @@ public class CarTest {
 		/**
 		 * New constructor
 		 */
-		Car car = new Car(0, 100);
+		Car car = new Car("", 0, 100);
 		
 		// Act
 		int initialSpeed = car.getSpeed();
@@ -47,7 +47,7 @@ public class CarTest {
 	public void shouldConsumeFuel() {
 		// Tests accelerate()
 		// Arrange
-		Car car = new Car(0, 100);
+		Car car = new Car("", 0, 100);
 		
 		// Act
 		int initialFuel = car.getFuel();
@@ -67,7 +67,7 @@ public class CarTest {
 	@Test
 	public void shouldRefuel() {
 		// Tests addFuel()
-		Car car = new Car(0, 100);
+		Car car = new Car("", 0, 100);
 		
 		car.accelerate(30); // removes 15 fuel units from car
 		car.addFuel();
@@ -86,7 +86,7 @@ public class CarTest {
 	public void shouldSlowDown() {
 		// Tests the brake() method in Car
 		// Arrange
-		Car car = new Car(0, 100);
+		Car car = new Car("", 0, 100);
 		
 		// Act
 		int accelerateSpeed = 50;
@@ -110,7 +110,7 @@ public class CarTest {
 	@Test
 	public void shouldStart() {
 		// Tests toggleOn()
-		Car car = new Car(0,100);
+		Car car = new Car("",0,100);
 		
 		car.toggleOn();
 		boolean carIsOn = car.isOn();
@@ -129,7 +129,7 @@ public class CarTest {
 	@Test
 	public void shouldTurnOff() {
 		// Tests toggleOn()
-		Car car = new Car(0,100);
+		Car car = new Car("",0,100);
 		
 		car.toggleOn(); // turns car on
 		car.toggleOn(); // turns car off
