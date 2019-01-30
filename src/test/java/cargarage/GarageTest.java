@@ -22,7 +22,7 @@ public class GarageTest {
 	public void shouldAddCarToGarage() {
 		// Tests addCar()
 		// Using constructor injection to pass the type of Map WHEN the object is created.
-		Garage garage = new Garage(new HashMap<String, Car>());
+		Garage garage = new Garage(new HashMap<>());
 		
 		// Get size of Map before adding a value
 		int carsSize = garage.getCarsSize();
@@ -43,7 +43,7 @@ public class GarageTest {
 	@Test
 	public void shouldRemoveCarFromGarage() {
 		// Tests removeCar()
-		Garage garage = new Garage(new HashMap<String, Car>());
+		Garage garage = new Garage(new HashMap<>());
 		
 		// Add a car to remove
 		garage.addCar(new Car("123", 0, 100));
@@ -54,9 +54,24 @@ public class GarageTest {
 		assertEquals(carsSizeAfterRemovingCar, carsSize - 1);
 	}
 	
+	/**
+	 * Changes to code:
+	 * 
+	 * 1.
+	 */
 	@Test
 	public void shouldFuelAllCars() {
 		// Tests fuelAllCars()
+		Garage garage = new Garage(new HashMap<>());
+		
+		// Add two cars to check that ALL are fueled
+		garage.addCar(new Car("123", 0, 50));
+		garage.addCar(new Car("456", 0, 50));
+		
+		garage.fuellAllCars();
+		
+		assertEquals(garage.getCar("123").getFuel(), 100);
+		assertEquals(garage.getCar("456").getFuel(), 100);
 	}
 	
 	@Test

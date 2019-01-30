@@ -23,4 +23,14 @@ public class Garage {
 		cars.remove(vin);
 	}
 
+	public void fuellAllCars() {
+		for (Car car : cars.values()) {
+			car.addFuel();
+		}
+	}
+
+	public Car getCar(String string) {
+		return cars.get(string);
+	}
+
 }
