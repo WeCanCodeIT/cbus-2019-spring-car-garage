@@ -35,6 +35,14 @@ public class CarTest {
 		assertEquals(initialSpeed + 10, speedAfterAcceleration);
 	}
 	
+	/**
+	 * Changes made to code:
+	 * 
+	 * 1. Update Constructor to take new fuel parameter
+	 * 2. Test Drive getFuel()
+	 * 3. Update the behavior of accelerate to reflect fuel usage
+	 * 
+	 */
 	@Test
 	public void shouldConsumeFuel() {
 		// Tests accelerate()
@@ -50,9 +58,23 @@ public class CarTest {
 		assertEquals(initialFuel - 5, fuelAfterAcceleration);
 	}
 	
+	/**
+	 * Changes made to code:
+	 * 
+	 * 1. Test Drives addFuel() method
+	 * 
+	 */
 	@Test
 	public void shouldRefuel() {
 		// Tests addFuel()
+		Car car = new Car(0, 100);
+		
+		car.accelerate(30); // removes 15 fuel units from car
+		car.addFuel();
+		int fuelLevelAfterRefueling = car.getFuel();
+		
+		assertEquals(100, fuelLevelAfterRefueling);
+		
 	}
 	
 	@Test

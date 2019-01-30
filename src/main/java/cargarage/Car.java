@@ -23,4 +23,8 @@ public class Car {
 		return fuel;
 	}
 
+	public void addFuel() {
+		this.fuel = 100;
+	}
+
 }
