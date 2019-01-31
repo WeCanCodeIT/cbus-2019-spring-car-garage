@@ -29,7 +29,7 @@ public class GarageTest {
 		int carsSize = garage.getCarsSize();
 		// Add a new car object
 		// Also drives the addition of `vin` property in Car 
-		garage.addCar(new Car("1", 0, 100));
+		garage.addCar(new Coupe("1", 0, 100));
 		int carsSizeAfterAdding = garage.getCarsSize();
 		
 		assertEquals(carsSize + 1, carsSizeAfterAdding);
@@ -47,7 +47,7 @@ public class GarageTest {
 		Garage garage = new Garage(new HashMap<>());
 		
 		// Add a car to remove
-		garage.addCar(new Car("123", 0, 100));
+		garage.addCar(new Coupe("123", 0, 100));
 		int carsSize = garage.getCarsSize();
 		garage.removeCar("123");
 		int carsSizeAfterRemovingCar = garage.getCarsSize();
@@ -66,8 +66,8 @@ public class GarageTest {
 		Garage garage = new Garage(new HashMap<>());
 		
 		// Add two cars to check that ALL are fueled
-		garage.addCar(new Car("123", 0, 50));
-		garage.addCar(new Car("456", 0, 50));
+		garage.addCar(new Coupe("123", 0, 50));
+		garage.addCar(new Coupe("456", 0, 50));
 		
 		garage.fuellAllCars();
 		
@@ -97,9 +97,9 @@ public class GarageTest {
 		Garage garage = new Garage(new HashMap<>());
 		
 		// add a couple cars
-		garage.addCar(new Car("1", 0, 100));
-		garage.addCar(new Car("2", 0, 100));
-		garage.addCar(new Car("3", 0, 100));
+		garage.addCar(new Coupe("1", 0, 100));
+		garage.addCar(new Coupe("2", 0, 100));
+		garage.addCar(new Coupe("3", 0, 100));
 		
 		assertEquals(garage.getCars() instanceof Collection<?>, true);
 	}

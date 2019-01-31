@@ -1,17 +1,19 @@
 package cargarage;
 
-public class Car {
+public abstract class Car {
 	
 	private String vin;
 	private int speed;
 	private int fuel;
 	private boolean on;
+	private int numDoors;
 
-	public Car(String vin, int speed, int fuel) {
+	public Car(String vin, int speed, int fuel, int numDoors) {
 		this.vin = vin;
 		this.speed = speed;
 		this.fuel = fuel;
 		this.on = false;
+		this.numDoors = numDoors;
 	}
 
 	public String getVin() {
@@ -50,6 +52,14 @@ public class Car {
 	@Override
 	public String toString() {
 		return "Car vin: " + vin + ", current fuel: " + fuel + "\n";
+	}
+
+	public int getNumDoors() {
+		return numDoors;
+	}
+	
+	public void emptyFuelTank() {
+		this.fuel = 0;
 	}
 
 }

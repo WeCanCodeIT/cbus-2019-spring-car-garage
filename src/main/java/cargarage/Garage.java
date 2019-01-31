@@ -30,8 +30,8 @@ public class Garage {
 		}
 	}
 
-	public Car getCar(String string) {
-		return cars.get(string);
+	public Car getCar(String vin) {
+		return cars.get(vin);
 	}
 
 	public Collection<Car> getCars() {

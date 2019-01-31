@@ -10,6 +10,12 @@ public class Application {
 		Garage garage = new Garage(new HashMap<>());
 		boolean isActive = true;
 
+		Car mySedan = new Sedan("123", 0, 100);
+		Car myCoupe = new Coupe("456", 0, 100);
+
+		garage.addCar(mySedan);
+		garage.addCar(myCoupe);
+
 		System.out.println("Hello! Please select what you would like to do:");
 		while (isActive) {
 			System.out.println("1. Add a Car to the Garage");
@@ -27,7 +33,7 @@ public class Application {
 				String userVin = input.nextLine();
 				// All cars will be added with a starting speed of 0
 				// and an fuel level of 100
-				garage.addCar(new Car(userVin, 0, 100));
+				garage.addCar(new Coupe(userVin, 0, 100));
 				break;
 			case "2":
 				System.out.println("Which car would you like to remove?:");
@@ -46,6 +52,7 @@ public class Application {
 				System.out.println("Which car would you like to test drive?");
 				printAllCars(garage);
 				userVin = input.nextLine();
+				// Declaring userCar as an instanceof Car
 				Car userCar = garage.getCar(userVin);
 				System.out.println("You chose car: " + userCar.getVin());
 
@@ -71,8 +78,24 @@ public class Application {
 						if (!userCar.isOn()) {
 							System.out.println("Car must first be on...");
 						} else {
-							userCar.accelerate(20);
-							System.out.println("You accelerate by 20");
+							// If the chosen Car is also a Sedan
+							if (userCar instanceof Sedan) {
+								System.out.println("Use flux capacitor??");
+								userResponse = input.nextLine();
+								if (userResponse.equals("yes")) {
+									// Casting the instanceof Car SPECIFICALLY to a Sedan
+									((Sedan) userCar).engageFluxCapacitor();
+									System.out.println(userCar);
+								} else {
+									userCar.accelerate(20);
+									System.out.println("You accelerate by 20");
+									System.out.println(userCar);
+								}
+							} else {
+								userCar.accelerate(20);
+								System.out.println("You accelerate by 20");
+								System.out.println(userCar);
+							}
 						}
 						break;
 					case "3":
