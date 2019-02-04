@@ -1,6 +1,8 @@
-package cargarage;
+package cargarage.sedan;
 
-public class Sedan extends Car {
+import cargarage.vehicles.Car;
+
+public abstract class Sedan extends Car {
 	
 	private boolean fluxCapacitor;
 	
@@ -15,6 +17,10 @@ public class Sedan extends Car {
 	public void engageFluxCapacitor() {
 		// Create a specific mutator in Car to change fuel value as expected
 		this.emptyFuelTank();
+	}
+	
+	public void addFuel() {
+		this.refuel();
 	}
 
 }

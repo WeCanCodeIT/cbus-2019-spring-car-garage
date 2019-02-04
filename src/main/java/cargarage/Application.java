@@ -3,6 +3,15 @@ package cargarage;
 import java.util.HashMap;
 import java.util.Scanner;
 
+import cargarage.coupe.ElectricCoupe;
+import cargarage.coupe.GasCoupe;
+import cargarage.coupe.HybridCoupe;
+import cargarage.garage.Garage;
+import cargarage.sedan.ElectricSedan;
+import cargarage.sedan.GasSedan;
+import cargarage.sedan.Sedan;
+import cargarage.vehicles.Car;
+
 public class Application {
 
 	public static void main(String[] args) {
@@ -10,11 +19,17 @@ public class Application {
 		Garage garage = new Garage(new HashMap<>());
 		boolean isActive = true;
 
-		Car mySedan = new Sedan("123", 0, 100);
-		Car myCoupe = new Coupe("456", 0, 100);
+		Car myElectricSedan = new ElectricSedan("123", 0, 100);
+		Car myGasSedan = new GasSedan("789", 0, 100);
+		Car myElectricCoupe = new ElectricCoupe("456", 0, 100);
+		Car myGasCoupe = new GasCoupe("321", 0, 100);
+		Car myHybridCoupe = new HybridCoupe("654", 0, 100);
 
-		garage.addCar(mySedan);
-		garage.addCar(myCoupe);
+		garage.addCar(myElectricSedan);
+		garage.addCar(myGasSedan);
+		garage.addCar(myElectricCoupe);
+		garage.addCar(myGasCoupe);
+		garage.addCar(myHybridCoupe);
 
 		System.out.println("Hello! Please select what you would like to do:");
 		while (isActive) {
@@ -33,7 +48,7 @@ public class Application {
 				String userVin = input.nextLine();
 				// All cars will be added with a starting speed of 0
 				// and an fuel level of 100
-				garage.addCar(new Coupe(userVin, 0, 100));
+				garage.addCar(new ElectricCoupe(userVin, 0, 100));
 				break;
 			case "2":
 				System.out.println("Which car would you like to remove?:");
@@ -126,7 +141,7 @@ public class Application {
 				}
 				break;
 			case "5":
-				garage.fuellAllCars();
+				garage.fuelAllCars();
 				printAllCars(garage);
 				System.out.println("You have refueled all cars");
 				break;

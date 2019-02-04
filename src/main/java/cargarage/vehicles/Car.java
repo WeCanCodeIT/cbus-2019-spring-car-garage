@@ -1,4 +1,4 @@
-package cargarage;
+package cargarage.vehicles;
 
 public abstract class Car {
 	
@@ -33,7 +33,10 @@ public abstract class Car {
 		return fuel;
 	}
 
-	public void addFuel() {
+	// Just here to illustrate abstract methods - this is bad...
+	public abstract void addFuel();
+	
+	public void refuel() {
 		this.fuel = 100;
 	}
 
@@ -51,7 +54,7 @@ public abstract class Car {
 	
 	@Override
 	public String toString() {
-		return "Car vin: " + vin + ", current fuel: " + fuel + "\n";
+		return "Car type: " + this.getClass() + " vin: " + vin + ", current fuel: " + fuel + "\n";
 	}
 
 	public int getNumDoors() {

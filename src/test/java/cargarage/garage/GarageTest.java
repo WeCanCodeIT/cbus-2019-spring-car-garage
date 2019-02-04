@@ -1,4 +1,4 @@
-package cargarage;
+package cargarage.garage;
 
 import static org.junit.Assert.assertEquals;
 
@@ -7,6 +7,9 @@ import java.util.HashMap;
 
 import org.junit.Assert;
 import org.junit.Test;
+
+import cargarage.coupe.Coupe;
+import cargarage.garage.Garage;
 
 public class GarageTest {
 
@@ -69,7 +72,7 @@ public class GarageTest {
 		garage.addCar(new Coupe("123", 0, 50));
 		garage.addCar(new Coupe("456", 0, 50));
 		
-		garage.fuellAllCars();
+		garage.fuelAllCars();
 		
 		assertEquals(garage.getCar("123").getFuel(), 100);
 		assertEquals(garage.getCar("456").getFuel(), 100);

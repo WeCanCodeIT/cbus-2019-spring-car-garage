@@ -1,8 +1,11 @@
-package cargarage;
+package cargarage.vehicles;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import cargarage.coupe.Coupe;
+import cargarage.vehicles.Car;
 
 public class CarTest {
 

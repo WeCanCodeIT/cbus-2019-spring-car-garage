@@ -1,8 +1,12 @@
-package cargarage;
+package cargarage.garage;
 
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import cargarage.interfaces.Electric;
+import cargarage.interfaces.Gas;
+import cargarage.vehicles.Car;
 
 public class Garage {
 	
@@ -24,9 +28,15 @@ public class Garage {
 		cars.remove(vin);
 	}
 
-	public void fuellAllCars() {
+	public void fuelAllCars() {
 		for (Car car : cars.values()) {
-			car.addFuel();
+			if (car instanceof Electric) {
+				((Electric) car).charge();
+			}
+			if (car instanceof Gas) {
+				((Gas) car).addGas();
+			}
+			
 		}
 	}
 
